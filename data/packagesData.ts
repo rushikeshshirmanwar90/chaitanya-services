@@ -1,0 +1,216 @@
+export const packages = [
+  {
+    id: 1,
+    title: "Golden Triangle Classic",
+    location: "Delhi, Agra, Jaipur",
+    price: 65000,
+    duration: 7,
+    groupSize: "4-12",
+    rating: 4.9,
+    reviews: 234,
+    type: "Cultural",
+    description:
+      "Explore India's most iconic destinations with the famous Golden Triangle tour",
+    image: "https://images.unsplash.com/photo-1548013146-72479768bada", // Taj Mahal
+    services: [
+      "Luxury accommodation",
+      "Professional guide",
+      "All meals included",
+      "Private transportation",
+      "Monument entry fees",
+      "Cultural performances",
+    ],
+    highlights: [
+      "Visit the magnificent Taj Mahal",
+      "Explore Red Fort and India Gate",
+      "Discover Amber Fort in Jaipur",
+      "Experience local markets and cuisine",
+      "Traditional Rajasthani cultural show",
+    ],
+    itinerary: [
+      "Day 1-2: Delhi - Red Fort, India Gate, Lotus Temple",
+      "Day 3-4: Agra - Taj Mahal, Agra Fort, Mehtab Bagh",
+      "Day 5-7: Jaipur - Amber Fort, City Palace, Hawa Mahal",
+    ],
+  },
+  {
+    id: 2,
+    title: "Kerala Backwater Bliss",
+    location: "Kerala",
+    price: 95000,
+    duration: 8,
+    groupSize: "2-8",
+    rating: 4.8,
+    reviews: 189,
+    type: "Nature",
+    description:
+      "Experience the serene backwaters and lush landscapes of God's Own Country",
+    image:
+      "https://plus.unsplash.com/premium_photo-1697729438401-fcb4ff66d9a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Kerala backwaters
+    services: [
+      "Houseboat accommodation",
+      "Ayurvedic spa treatments",
+      "Traditional Kerala meals",
+      "Backwater cruises",
+      "Tea plantation tours",
+      "Wildlife sanctuary visits",
+    ],
+    highlights: [
+      "Stay in traditional houseboats",
+      "Cruise through Alleppey backwaters",
+      "Visit Munnar tea plantations",
+      "Experience Ayurvedic treatments",
+      "Explore Periyar Wildlife Sanctuary",
+    ],
+    itinerary: [
+      "Day 1-2: Cochin - Chinese fishing nets, spice markets",
+      "Day 3-4: Munnar - Tea plantations, hill stations",
+      "Day 5-6: Alleppey - Houseboat cruise, backwaters",
+      "Day 7-8: Kumarakom - Bird sanctuary, village tours",
+    ],
+  },
+  {
+    id: 3,
+    title: "Rajasthan Royal Heritage",
+    location: "Rajasthan",
+    price: 120000,
+    duration: 10,
+    groupSize: "6-15",
+    rating: 4.9,
+    reviews: 156,
+    type: "Heritage",
+    description:
+      "Live like royalty in the land of maharajas with palace stays and desert adventures",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661962428918-6a57ab674e23?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Rajasthan palace
+    services: [
+      "Palace hotel stays",
+      "Camel safari in Thar Desert",
+      "Traditional Rajasthani cuisine",
+      "Folk dance performances",
+      "Heritage site tours",
+      "Shopping assistance",
+    ],
+    highlights: [
+      "Stay in converted palace hotels",
+      "Camel safari in Jaisalmer",
+      "Explore Udaipur's Lake Palace",
+      "Visit Jodhpur's Mehrangarh Fort",
+      "Experience desert camping",
+    ],
+    itinerary: [
+      "Day 1-2: Jaipur - City Palace, Amber Fort",
+      "Day 3-4: Jodhpur - Mehrangarh Fort, blue city",
+      "Day 5-6: Jaisalmer - Desert safari, sand dunes",
+      "Day 7-8: Udaipur - Lake Palace, boat rides",
+      "Day 9-10: Pushkar - Holy lake, camel fair",
+    ],
+  },
+  {
+    id: 4,
+    title: "Goa Beach Paradise",
+    location: "Goa",
+    price: 55000,
+    duration: 6,
+    groupSize: "2-10",
+    rating: 4.7,
+    reviews: 298,
+    type: "Beach",
+    description:
+      "Relax on pristine beaches with Portuguese heritage and vibrant nightlife",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e", // Goa beach
+    services: [
+      "Beachfront accommodation",
+      "Water sports activities",
+      "Portuguese heritage tours",
+      "Sunset cruise",
+      "Local cuisine experiences",
+      "Nightlife guidance",
+    ],
+    highlights: [
+      "Relax on Baga and Calangute beaches",
+      "Explore Old Goa churches",
+      "Enjoy water sports and parasailing",
+      "Experience vibrant nightlife",
+      "Taste authentic Goan cuisine",
+    ],
+    itinerary: [
+      "Day 1-2: North Goa - Baga, Calangute beaches",
+      "Day 3-4: Old Goa - Churches, heritage sites",
+      "Day 5-6: South Goa - Palolem, Agonda beaches",
+    ],
+  },
+  {
+    id: 5,
+    title: "Himalayan Adventure",
+    location: "Himachal Pradesh",
+    price: 85000,
+    duration: 9,
+    groupSize: "4-12",
+    rating: 4.8,
+    reviews: 167,
+    type: "Adventure",
+    description:
+      "Trek through stunning mountain landscapes and experience hill station charm",
+    image:
+      "https://images.unsplash.com/photo-1699972901575-a27de02f4916?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Himalayas
+    services: [
+      "Mountain lodge stays",
+      "Trekking equipment",
+      "Professional trek guides",
+      "All meals during trek",
+      "Transportation",
+      "Emergency support",
+    ],
+    highlights: [
+      "Trek to Triund and McLeod Ganj",
+      "Visit Dalai Lama's residence",
+      "Explore Manali and Solang Valley",
+      "Experience paragliding",
+      "Visit ancient temples",
+    ],
+    itinerary: [
+      "Day 1-2: Delhi to Dharamshala",
+      "Day 3-4: McLeod Ganj - Dalai Lama temple",
+      "Day 5-6: Triund trek and camping",
+      "Day 7-8: Manali - Solang Valley, adventure sports",
+      "Day 9: Return to Delhi",
+    ],
+  },
+  {
+    id: 8,
+    title: "Mumbai & Bollywood Experience",
+    location: "Mumbai",
+    price: 48000,
+    duration: 5,
+    groupSize: "8-20",
+    rating: 4.5,
+    reviews: 203,
+    type: "City",
+    description:
+      "Explore India's financial capital and get behind-the-scenes Bollywood access",
+    image:
+      "https://images.unsplash.com/photo-1660145416818-b9a2b1a1f193?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Mumbai skyline
+    services: [
+      "City hotel accommodation",
+      "Bollywood studio tours",
+      "Local train experience",
+      "Street food tours",
+      "Gateway of India visits",
+      "Shopping assistance",
+    ],
+    highlights: [
+      "Visit Bollywood film studios",
+      "Explore Gateway of India",
+      "Experience local train rides",
+      "Taste authentic street food",
+      "Visit Elephanta Caves",
+    ],
+    itinerary: [
+      "Day 1-2: South Mumbai - Gateway, Colaba",
+      "Day 3: Bollywood studios, Film City",
+      "Day 4: Elephanta Caves day trip",
+      "Day 5: Markets, departure",
+    ],
+  },
+];
