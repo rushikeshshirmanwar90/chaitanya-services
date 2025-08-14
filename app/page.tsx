@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import PackagesPreview from "@/components/PackagePreview";
@@ -27,30 +26,33 @@ const HomePage: React.FC = () => {
 
       {/* Hero Section */}
       <HeroSection />
+      <div className="px-0.5">
 
-      {/* About Us & Establishment */}
-      <AboutSection />
 
-      {/* Packages Preview */}
-      <PackagesPreview packages={featuredPackages} />
+        {/* About Us & Establishment */}
+        <AboutSection />
 
-      {/* Image Gallery */}
-      {/* <ImageGallery /> */}
+        {/* Packages Preview */}
+        <PackagesPreview packages={featuredPackages} />
 
-      {/* Services */}
-      <ServicesSection />
+        {/* Image Gallery */}
+        {/* <ImageGallery /> */}
 
-      {/* Featured Destinations */}
-      {/* <DestinationShowcase /> */}
+        {/* Services */}
+        <ServicesSection />
 
-      {/* Reviews */}
-      <ReviewsSection reviews={customerReviews} />
+        {/* Featured Destinations */}
+        {/* <DestinationShowcase /> */}
 
-      {/* Contact */}
-      <ContactSection
-        contactInfo={contactInfo}
-        onSubmit={handleContactSubmit}
-      />
+        {/* Reviews */}
+        <ReviewsSection reviews={customerReviews} />
+
+        {/* Contact */}
+        <ContactSection
+          contactInfo={contactInfo}
+          onSubmit={handleContactSubmit}
+        />
+      </div>
 
       {/* Footer */}
       <Footer contactInfo={contactInfo} />
