@@ -1,0 +1,76 @@
+import { MapPin, Calendar, Heart, GraduationCap, Compass } from "lucide-react"
+import type { PackageCategories } from "@/types"
+
+export const packageCategories: PackageCategories = {
+  customise: {
+    name: "Customise Packages",
+    icon: Compass,
+    color: "bg-blue-500",
+    trips: [
+      "Sikkim Darjeeling",
+      "3 Sisters (Assam + Meghalaya + Arunachal)",
+      "Only Meghalaya",
+      "Meghalaya Assam",
+      "Karnataka Lovingly",
+      "Only Coorg",
+      "Shimla Manali",
+      "Only Manali",
+      "Kerala Bliss",
+      "Jammu Kashmir",
+      "Jammu Kashmir + Vaishno Devi",
+      "Rajasthan Marwar",
+      "Rajasthan Mewar + Mount Abu",
+      "Puducherry Special",
+      "Rest of Himachal",
+      "Rest of Himachal + Amritsar",
+    ],
+  },
+  yatra: {
+    name: "Yatra Special",
+    icon: MapPin,
+    color: "bg-orange-500",
+    trips: [
+      "Chardham Yatra Uttarakhand",
+      "Do Dham Yatra Uttarakhand",
+      "Puri Bhubaneswar",
+      "Puri Bhubaneswar Gangasagar",
+      "Dwarka Somnath Statue of Unity",
+      "Dwarka Somnath SOU + Gir Forest",
+      "Madurai + Rameshwaram + Kodaikanal + Trivandrum",
+      "Kashi + Ayodhya + Prayag Raj",
+      "Nepal Special",
+      "Pithapuram Special",
+    ],
+  },
+  student: {
+    name: "Student Special",
+    icon: GraduationCap,
+    color: "bg-green-500",
+    trips: [
+      "Visakhapatnam + Bora Caves + Araku Valley",
+      "Bengaluru + Mysuru + Wonderla Water Park",
+      "Hyderabad + Wonderla Water Park",
+      "Delhi Agra",
+      "Jaipur + Chittorgarh + Udaipur",
+      "Jaipur + Jodhpur + Jaisalmer",
+    ],
+  },
+  short: {
+    name: "Short Trips",
+    icon: Calendar,
+    color: "bg-purple-500",
+    trips: [
+      "Konkan Special",
+      "Shodash Shaktipeeth",
+      "Ashtavinayak Yatra",
+      "One Day Ramoji Film City",
+      "Amavasya Kuber Bhandar Special",
+    ],
+  },
+  honeymoon: {
+    name: "Honeymoon Packages",
+    icon: Heart,
+    color: "bg-pink-500",
+    trips: ["Coming Soon..."],
+  },
+}

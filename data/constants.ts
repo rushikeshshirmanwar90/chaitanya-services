@@ -1,4 +1,29 @@
-import { Package, Review, ContactInfo } from "../types";
+import { ContactInfo } from "../types";
+interface Package {
+  id: number;
+  title: string;
+  location: string;
+  price: number;
+  duration: number;
+  groupSize: string;
+  rating: number;
+  reviews: number;
+  type: string;
+  description: string;
+  image: string;
+  services: string[];
+  highlights: string[];
+  itinerary: string[];
+}
+
+interface Review {
+  name: string;
+  location: string;
+  package: string;
+  rating: number;
+  review: string;
+  image?: string;
+}
 
 export const featuredPackages: Package[] = [
   {
@@ -169,9 +194,4 @@ export const contactInfo: ContactInfo = {
   phone: "+91 98765 43210",
   email: "info@wanderlust.in",
   address: "123 Travel Street, New Delhi, India 110001",
-  officeHours: {
-    weekdays: "Monday - Friday: 9:00 AM - 6:00 PM",
-    saturday: "Saturday: 10:00 AM - 4:00 PM",
-    sunday: "Sunday: Closed",
-  },
 };

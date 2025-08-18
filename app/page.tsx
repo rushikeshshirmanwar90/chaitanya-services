@@ -3,46 +3,33 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import PackagesPreview from "@/components/PackagePreview";
 import ServicesSection from "@/components/ServiceSection";
 import ReviewsSection from "@/components/ReviewSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/FooterSection";
-// import { ImageGallery } from "@/components/image-gallery";
-// import { DestinationShowcase } from "@/components/destination-showcase";
-import { featuredPackages, customerReviews, contactInfo } from "@/data/constants";
+import { customerReviews, contactInfo } from "@/data/constants";
+import TravelPackages from "@/components/packages/travel-packages";
 
 const HomePage: React.FC = () => {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Contact form submitted");
   };
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-
-
       {/* Hero Section */}
       <HeroSection />
       <div className="px-0.5">
 
-
         {/* About Us & Establishment */}
         <AboutSection />
 
-        {/* Packages Preview */}
-        <PackagesPreview packages={featuredPackages} />
+        <TravelPackages />
 
-        {/* Image Gallery */}
-        {/* <ImageGallery /> */}
 
         {/* Services */}
         <ServicesSection />
-
-        {/* Featured Destinations */}
-        {/* <DestinationShowcase /> */}
 
         {/* Reviews */}
         <ReviewsSection reviews={customerReviews} />

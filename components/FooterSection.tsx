@@ -23,7 +23,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({
     contactInfo,
-    companyName = "WanderLust",
+    companyName = "Chaitanya Services",
     description = "Creating unforgettable travel experiences across India since 2010.",
     className = ""
 }) => {
@@ -87,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({
 
                 {/* Copyright */}
                 <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2024 {companyName}. All rights reserved.</p>
+                    <p>&copy; 2025 {companyName}. All rights reserved.</p>
                 </div>
             </div>
         </footer>

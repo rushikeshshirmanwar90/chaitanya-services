@@ -1,42 +1,42 @@
-export interface Package {
-  id: number;
-  title: string;
-  location: string;
-  price: number;
-  duration: number;
-  groupSize: string;
-  rating: number;
-  reviews: number;
-  type: string;
-  description: string;
-  image: string;
-  services: string[];
-  highlights: string[];
-  itinerary: string[];
-}
-
-export interface Review {
+export interface Trip {
   name: string;
-  location: string;
-  rating: number;
-  review: string;
-  image: string;
-  package: string;
+  description?: string;
 }
 
-export interface Service {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
+export interface PackageCategory {
+  name: string;
+  icon: unknown;
+  color: string;
+  trips: string[];
+}
+
+export interface PackageCategories {
+  [key: string]: PackageCategory;
+}
+
+export interface SelectedTrip {
+  name: string;
+  category: string;
 }
 
 export interface ContactInfo {
   phone: string;
   email: string;
   address: string;
-  officeHours: {
-    weekdays: string;
-    saturday: string;
-    sunday: string;
-  };
+}
+
+export interface LeadData {
+  name: string;
+  phoneNumber: number;
+  packageCategory: string;
+  packageName: string;
+}
+
+export interface BookingFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  whatsappNumber: string;
+  desiredLocation: string;
+  tripDuration: string;
 }

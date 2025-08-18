@@ -4,11 +4,21 @@ import Image from "next/image";
 import { Star } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { Review } from '../types';
+
 import React from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+
+interface Review {
+    name: string;
+    location: string;
+    package: string;
+    rating: number;
+    review: string;
+    image?: string;
+}
 
 interface ReviewCardProps {
     review: Review;

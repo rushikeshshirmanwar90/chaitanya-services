@@ -1,8 +1,13 @@
 "use client";
 
 import { MapPin, Users, Award, Phone } from 'lucide-react';
-import { Service } from '../types';
 import React from "react";
+
+interface Service {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+}
 
 interface ServiceCardProps {
     service: Service;

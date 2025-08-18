@@ -57,12 +57,6 @@ const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contactInfo }) 
                 <span>{contactInfo.address}</span>
             </div>
         </div>
-        <div className="mt-8">
-            <h4 className="text-lg font-bold mb-4">Office Hours</h4>
-            <p className="text-gray-600">{contactInfo.officeHours.weekdays}</p>
-            <p className="text-gray-600">{contactInfo.officeHours.saturday}</p>
-            <p className="text-gray-600">{contactInfo.officeHours.sunday}</p>
-        </div>
     </div>
 );
 
