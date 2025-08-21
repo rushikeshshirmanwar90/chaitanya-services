@@ -4,10 +4,9 @@ import React from "react";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServiceSection";
-import ReviewsSection from "@/components/ReviewSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/FooterSection";
-import { customerReviews, contactInfo } from "@/data/constants";
+import { contactInfo } from "@/data/constants";
 import TravelPackages from "@/components/packages/travel-packages";
 
 const HomePage: React.FC = () => {
@@ -30,9 +29,6 @@ const HomePage: React.FC = () => {
 
         {/* Services */}
         <ServicesSection />
-
-        {/* Reviews */}
-        <ReviewsSection reviews={customerReviews} />
 
         {/* Contact */}
         <ContactSection

@@ -191,7 +191,8 @@ export const customerReviews: Review[] = [
 ];
 
 export const contactInfo: ContactInfo = {
-  phone: "+91 98765 43210",
+  phone: "+9464444110 / 7875636666",
   email: "info@wanderlust.in",
-  address: "123 Travel Street, New Delhi, India 110001",
+  address:
+    "Dhanvantari nivas Udgirkar complex Opp Bajaj hospital Vazirabad Nanded 431601",
 };

@@ -23,7 +23,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className = "" }) => {
     const statistics = [
         { value: "10K+", label: "Happy Travelers" },
         { value: "50+", label: "Destinations" },
-        { value: "13+", label: "Years Experience" }
+        { value: "10+", label: "Years Experience" }
     ];
 
     return (
@@ -33,7 +33,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className = "" }) => {
                     <div className="animate-slide-in-left">
                         <h2 className="text-4xl font-bold mb-6">About Chaitanya Services</h2>
                         <p className="text-gray-600 mb-6 text-lg">
-                            Established in 2010, Chaitanya Services has been your trusted travel
+                            Established in August 2015, Chaitanya Services has been your trusted travel
                             companion for over a decade. We specialize in creating
                             personalized travel experiences that go beyond ordinary tourism.
                         </p>

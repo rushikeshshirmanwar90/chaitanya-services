@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Users, Award, Phone } from 'lucide-react';
+import { MapPin, Users, Award, Phone, Car } from 'lucide-react';
 import React from "react";
 
 interface Service {
@@ -53,8 +53,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             description: "Premium accommodations and exclusive experiences for discerning travelers"
         },
         {
-            icon: <Phone className="w-8 h-8" />,
-            title: "24/7 Support",
+            icon: <Car className="w-8 h-8" />,
+            title: "All India car rental",
             description: "Round-the-clock assistance throughout your journey"
         }
     ];
