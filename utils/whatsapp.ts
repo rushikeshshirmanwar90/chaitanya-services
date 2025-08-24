@@ -34,7 +34,7 @@ export const generateLeadData = (
   };
 };
 
-export const sendToWhatsApp = (message: string, phoneNumber = "9764444110") => {
+export const sendToWhatsApp = (message: string, phoneNumber = "7875636666") => {
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, "_blank");

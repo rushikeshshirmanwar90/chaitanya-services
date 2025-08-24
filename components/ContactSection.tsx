@@ -28,12 +28,30 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => (
     <div className="animate-slide-in-right">
         <form className="space-y-6" onSubmit={onSubmit}>
             <div className="grid md:grid-cols-2 gap-4">
-                <Input placeholder="First Name" />
-                <Input placeholder="Last Name" />
+                <Input
+                    name="firstName"
+                    placeholder="First Name"
+                />
+                <Input
+                    name="lastName"
+                    placeholder="Last Name"
+                />
             </div>
-            <Input placeholder="Email Address" type="email" />
-            <Input placeholder="Phone Number" type="tel" />
-            <Textarea placeholder="Tell us about your dream destination..." rows={5} />
+            <Input
+                name="email"
+                placeholder="Email Address"
+                type="email"
+            />
+            <Input
+                name="phone"
+                placeholder="Phone Number"
+                type="tel"
+            />
+            <Textarea
+                name="message"
+                placeholder="Tell us about your dream destination..."
+                rows={5}
+            />
             <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
                 Send Message
             </Button>
@@ -81,13 +99,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const form = e.target as HTMLFormElement;
-        const firstName = (form.elements.namedItem("firstName") as HTMLInputElement)?.value || "";
-        const lastName = (form.elements.namedItem("lastName") as HTMLInputElement)?.value || "";
-        const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
-        const phone = (form.elements.namedItem("phone") as HTMLInputElement)?.value || "";
-        const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+        const formData = new FormData(form);
+
+        // Get form values using FormData
+        const firstName = formData.get("firstName") as string || "";
+        const lastName = formData.get("lastName") as string || "";
+        const email = formData.get("email") as string || "";
+        const phone = formData.get("phone") as string || "";
+        const message = formData.get("message") as string || "";
+
         const whatsappMessage = `Hello!\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
         sendToWhatsApp(whatsappMessage);
+
         if (onSubmit) {
             onSubmit(e);
         }
