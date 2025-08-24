@@ -191,8 +191,8 @@ export const customerReviews: Review[] = [
 ];
 
 export const contactInfo: ContactInfo = {
-  phone: "+9464444110 / 7875636666",
-  email: "info@wanderlust.in",
+  phone: "9764444110 / 7875636666",
+  email: "chaitanyaservices01@gmail.com",
   address:
     "Dhanvantari nivas Udgirkar complex Opp Bajaj hospital Vazirabad Nanded 431601",
 };

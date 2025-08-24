@@ -1,9 +1,9 @@
-import { MapPin, Calendar, Heart, GraduationCap, Compass } from "lucide-react"
-import type { PackageCategories } from "@/types"
+import { MapPin, Calendar, Heart, GraduationCap, Compass } from "lucide-react";
+import type { PackageCategories } from "@/types";
 
 export const packageCategories: PackageCategories = {
-  customise: {
-    name: "Customise Packages",
+  customize: {
+    name: "customize Packages",
     icon: Compass,
     color: "bg-blue-500",
     trips: [
@@ -17,7 +17,6 @@ export const packageCategories: PackageCategories = {
       "Only Manali",
       "Kerala Bliss",
       "Jammu Kashmir",
-      "Jammu Kashmir + Vaishno Devi",
       "Rajasthan Marwar",
       "Rajasthan Mewar + Mount Abu",
       "Puducherry Special",
@@ -30,6 +29,7 @@ export const packageCategories: PackageCategories = {
     icon: MapPin,
     color: "bg-orange-500",
     trips: [
+      "Jammu Kashmir + Vaishno Devi",
       "Chardham Yatra Uttarakhand",
       "Do Dham Yatra Uttarakhand",
       "Puri Bhubaneswar",
@@ -73,4 +73,4 @@ export const packageCategories: PackageCategories = {
     color: "bg-pink-500",
     trips: ["Coming Soon..."],
   },
-}
+};

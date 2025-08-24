@@ -10,7 +10,7 @@ import TripBookingForm from "./trip-booking-form"
 import { Button } from "@/components/ui/button"
 
 export default function TravelPackages() {
-  const [activeCategory, setActiveCategory] = useState("customise")
+  const [activeCategory, setActiveCategory] = useState("customize")
   const [selectedTrip, setSelectedTrip] = useState<SelectedTrip | null>(null)
   const [showAll, setShowAll] = useState(false)
 

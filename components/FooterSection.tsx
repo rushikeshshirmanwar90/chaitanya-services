@@ -24,7 +24,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
     contactInfo,
     companyName = "Chaitanya Services",
-    description = "Creating unforgettable travel experiences across India since 2010.",
+    description = "Creating unforgettable travel experiences across India since 2015.",
     className = ""
 }) => {
     const quickLinks: FooterLink[] = [
@@ -35,10 +35,7 @@ const Footer: React.FC<FooterProps> = ({
     ];
 
     const destinations: FooterLink[] = [
-        { href: "#", label: "Golden Triangle" },
-        { href: "#", label: "Kerala" },
-        { href: "#", label: "Rajasthan" },
-        { href: "#", label: "Kashmir" }
+        { href: "", label: "Andaman" }
     ];
 
     const sections: FooterSection[] = [

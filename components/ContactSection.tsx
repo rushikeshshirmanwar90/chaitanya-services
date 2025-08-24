@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapIcon } from 'lucide-react';
 import { ContactInfo } from '../types';
 import React from "react";
+import { sendToWhatsApp } from "../utils/whatsapp";
 
 interface ContactFormProps {
     onSubmit?: (e: React.FormEvent) => void;
@@ -79,6 +80,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        const firstName = (form.elements.namedItem("firstName") as HTMLInputElement)?.value || "";
+        const lastName = (form.elements.namedItem("lastName") as HTMLInputElement)?.value || "";
+        const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
+        const phone = (form.elements.namedItem("phone") as HTMLInputElement)?.value || "";
+        const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+        const whatsappMessage = `Hello!\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+        sendToWhatsApp(whatsappMessage);
         if (onSubmit) {
             onSubmit(e);
         }
