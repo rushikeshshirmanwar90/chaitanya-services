@@ -11,7 +11,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
     return (
-        <nav className={`fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b ${className}`}>
+        <nav className={`sticky top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b ${className}`}>
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     <Link href={`/`} className="text-2xl font-bold text-blue-600"><Image className="w-[15rem]" src={logo} alt="logo" width={100} height={100} /></Link>

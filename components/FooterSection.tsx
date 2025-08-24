@@ -28,10 +28,8 @@ const Footer: React.FC<FooterProps> = ({
     className = ""
 }) => {
     const quickLinks: FooterLink[] = [
-        { href: "#home", label: "Home" },
-        { href: "#about", label: "About" },
-        { href: "/packages", label: "Packages" },
-        { href: "#services", label: "Services" }
+        { href: "/About", label: "About" },
+        { href: "/Packages", label: "Packages" },
     ];
 
     const destinations: FooterLink[] = [
