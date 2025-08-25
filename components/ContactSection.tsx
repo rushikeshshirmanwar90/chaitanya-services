@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapIcon } from 'lucide-react';
+import { Phone, Mail, MapIcon, Facebook } from 'lucide-react';
 import { ContactInfo } from '../types';
 import React from "react";
 import { sendToWhatsApp } from "../utils/whatsapp";
@@ -85,6 +85,16 @@ const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contactInfo }) 
             <div className="flex items-center">
                 Sunday: 12 noon to 6PM
             </div>
+        </div>
+
+        <div className="mt-8">
+            <Button
+                className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-2"
+                onClick={() => window.open('https://www.facebook.com/share/16zPfjSx4J/', '_blank')}
+            >
+                <Facebook className="w-5 h-5" />
+                Follow us on Facebook
+            </Button>
         </div>
     </div>
 );
