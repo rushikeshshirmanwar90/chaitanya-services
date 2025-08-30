@@ -37,6 +37,6 @@ export interface BookingFormData {
   lastName: string;
   email: string;
   whatsappNumber: string;
-  desiredLocation: string;
+  desiredLocation?: string;
   tripDuration: string;
 }

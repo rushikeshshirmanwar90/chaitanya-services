@@ -80,7 +80,7 @@ const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contactInfo }) 
         <h5 className="text-lg font-bold mt-6 mb-3">Opening Hours</h5>
         <div className="space-y-4">
             <div className="flex items-center">
-                Monday-saturday : 9AM to 8PM
+                Monday-Saturday : 9AM to 8PM
             </div>
             <div className="flex items-center">
                 Sunday: 12 noon to 6PM

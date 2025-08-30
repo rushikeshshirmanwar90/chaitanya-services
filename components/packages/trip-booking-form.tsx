@@ -24,7 +24,6 @@ export default function TripBookingForm({ isOpen, onClose, tripName, categoryNam
     lastName: "",
     email: "",
     whatsappNumber: "",
-    desiredLocation: "",
     tripDuration: "",
   })
 
@@ -55,7 +54,6 @@ export default function TripBookingForm({ isOpen, onClose, tripName, categoryNam
       lastName: "",
       email: "",
       whatsappNumber: "",
-      desiredLocation: "",
       tripDuration: "",
     })
   }
@@ -146,21 +144,7 @@ export default function TripBookingForm({ isOpen, onClose, tripName, categoryNam
             />
           </div>
 
-          {/* Desired Location */}
-          <div className="space-y-2">
-            <Label htmlFor="desiredLocation" className="flex items-center gap-2 text-gray-700">
-              <MapPin className="w-4 h-4" />
-              Desired Location/Preferences
-            </Label>
-            <Textarea
-              id="desiredLocation"
-              name="desiredLocation"
-              value={formData.desiredLocation}
-              onChange={handleInputChange}
-              className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 min-h-[80px]"
-              placeholder="Any specific places you'd like to visit or special preferences..."
-            />
-          </div>
+
 
           {/* Trip Duration */}
           <div className="space-y-2">

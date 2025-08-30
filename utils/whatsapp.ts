@@ -11,7 +11,6 @@ export const generateWhatsAppMessage = (
 - Package: ${tripName}
 - Category: ${categoryName}
 - Duration: ${formData.tripDuration}
-- Desired Location: ${formData.desiredLocation}
 
 *Contact Information:*
 - Name: ${formData.firstName} ${formData.lastName}
