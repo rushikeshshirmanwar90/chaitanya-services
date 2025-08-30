@@ -42,7 +42,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </p>
                 <div className="space-x-4 animate-slide-up-delay-2">
                     <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                        <Link href="/packages">Explore Packages</Link>
+                        <Link href="/Packages">Explore Packages</Link>
                     </Button>
                 </div>
             </div>
