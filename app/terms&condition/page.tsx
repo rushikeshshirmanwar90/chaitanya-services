@@ -140,7 +140,7 @@ const TermsAndConditions: React.FC = () => {
                         <Link href="/" className="text-blue-600 hover:underline">
                             ← Back to Home
                         </Link>
-                        <Link href="/privacy-policy" className="text-blue-600 hover:underline">
+                        <Link href="/privacyPolicy" className="text-blue-600 hover:underline">
                             Privacy Policy →
                         </Link>
                     </div>

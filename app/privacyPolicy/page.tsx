@@ -154,7 +154,7 @@ const PrivacyPolicy: React.FC = () => {
                         <Link href="/" className="text-green-600 hover:underline">
                             ← Back to Home
                         </Link>
-                        <Link href="/terms-and-conditions" className="text-green-600 hover:underline">
+                        <Link href="/terms&condition" className="text-green-600 hover:underline">
                             Terms & Conditions →
                         </Link>
                     </div>
