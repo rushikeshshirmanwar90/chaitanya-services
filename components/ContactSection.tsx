@@ -7,6 +7,7 @@ import { Phone, Mail, MapIcon, Facebook } from 'lucide-react';
 import { ContactInfo } from '../types';
 import React from "react";
 import { sendToWhatsApp } from "../utils/whatsapp";
+import Link from "next/link";
 
 interface ContactFormProps {
     onSubmit?: (e: React.FormEvent) => void;
@@ -85,6 +86,13 @@ const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contactInfo }) 
             <div className="flex items-center">
                 Sunday: 12 noon to 6PM
             </div>
+        </div>
+
+        <h5 className="text-lg font-bold mt-6 mb-3">Important Links</h5>
+        <div className="space-y-4">
+            <Link href="/terms&condition" className="text-blue-600 hover:underline"> Terms & Conditions  </Link>
+            <br />
+            <Link href="/privacyPolicy" className="text-blue-600 hover:underline"> Privacy Policy</Link>
         </div>
 
         <div className="mt-8">
