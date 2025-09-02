@@ -191,7 +191,7 @@ export const customerReviews: Review[] = [
 ];
 
 export const contactInfo: ContactInfo = {
-  phone: "9764444110 / 7875636666",
+  phone: "9764444116 / 7875636666",
   email: "chaitanyaservices01@gmail.com",
   address:
     "Dhanvantari nivas, Udgirkar complex Opp Bajaj hospital, Vazirabad Nanded 431601",
