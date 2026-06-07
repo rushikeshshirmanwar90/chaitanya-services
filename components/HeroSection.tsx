@@ -4,20 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 interface HeroSectionProps {
-    title?: string;
-    subtitle?: string;
-    backgroundImage?: string;
     className?: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({
-    title = "Explore Incredible India",
-    subtitle = "Discover amazing destinations and create unforgettable memories with our expertly crafted India travel packages",
-    backgroundImage = "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className = ""
-}) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ className = "" }) => {
+    const { hero } = useSiteContent();
+    const { title, subtitle, backgroundImage, buttonText, buttonLink } = hero;
+
     return (
         <section
             id="home"
@@ -42,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </p>
                 <div className="space-x-4 animate-slide-up-delay-2">
                     <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                        <Link href="/Packages">Explore Packages</Link>
+                        <Link href={buttonLink || "/Packages"}>{buttonText || "Explore Packages"}</Link>
                     </Button>
                 </div>
             </div>

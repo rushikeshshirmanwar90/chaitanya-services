@@ -1,23 +1,55 @@
 "use client"
 
-import { useState } from "react"
-import { packageCategories } from "@/data/packages"
-import type { SelectedTrip } from "@/types"
+import { useEffect, useMemo, useState } from "react"
+import type { PackageCategories, SelectedTrip } from "@/types"
 import TravelHeader from "./travel-header"
 import CategoryFilter from "./category-filter"
 import PackageCard from "./package-card"
 import TripBookingForm from "./trip-booking-form"
 import { Button } from "@/components/ui/button"
 
+interface ApiCategory {
+  _id: string
+  key: string
+  name: string
+  color: string
+  order: number
+  trips: string[]
+}
+
 export default function TravelPackages() {
-  const [activeCategory, setActiveCategory] = useState("customize")
+  const [categoriesList, setCategoriesList] = useState<ApiCategory[]>([])
+  const [loading, setLoading] = useState(true)
+  const [activeCategory, setActiveCategory] = useState<string>("")
   const [selectedTrip, setSelectedTrip] = useState<SelectedTrip | null>(null)
   const [showAll, setShowAll] = useState(false)
+
+  useEffect(() => {
+    fetch("/api/package-category")
+      .then((res) => res.json())
+      .then((data: ApiCategory[]) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setCategoriesList(data)
+          setActiveCategory(data[0].key)
+        }
+      })
+      .catch(() => setCategoriesList([]))
+      .finally(() => setLoading(false))
+  }, [])
+
+  // Build the keyed object the CategoryFilter expects.
+  const packageCategories = useMemo<PackageCategories>(() => {
+    const obj: PackageCategories = {}
+    for (const c of categoriesList) {
+      obj[c.key] = { name: c.name, icon: null, color: c.color, trips: c.trips }
+    }
+    return obj
+  }, [categoriesList])
 
   const handleTripSelect = (tripName: string) => {
     setSelectedTrip({
       name: tripName,
-      category: packageCategories[activeCategory].name,
+      category: packageCategories[activeCategory]?.name ?? "",
     })
   }
 
@@ -26,11 +58,18 @@ export default function TravelPackages() {
     setShowAll(false)
   }
 
-  const tripsToShow = showAll
-    ? packageCategories[activeCategory].trips
-    : packageCategories[activeCategory].trips.slice(0, 4)
+  const activeTrips = packageCategories[activeCategory]?.trips ?? []
+  const tripsToShow = showAll ? activeTrips : activeTrips.slice(0, 4)
+  const hasMoreTrips = activeTrips.length > 4
 
-  const hasMoreTrips = packageCategories[activeCategory].trips.length > 4
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <TravelHeader />
+        <p className="text-center text-gray-500">Loading packages…</p>
+      </div>
+    )
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 animate-fade-in">
@@ -47,7 +86,7 @@ export default function TravelPackages() {
           <PackageCard
             key={index}
             trip={trip}
-            categoryName={packageCategories[activeCategory].name}
+            categoryName={packageCategories[activeCategory]?.name ?? ""}
             index={index}
             onTripSelect={handleTripSelect}
           />
@@ -81,37 +120,37 @@ export default function TravelPackages() {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        
+
         @keyframes slide-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(30px); 
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        
+
         @keyframes fade-in-up {
-          from { 
-            opacity: 0; 
-            transform: translateY(20px); 
+          from {
+            opacity: 0;
+            transform: translateY(20px);
           }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 0.8s ease-out;
         }
-        
+
         .animate-slide-up {
           animation: slide-up 1s ease-out;
         }
-        
+
         .animate-fade-in-up {
           animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;

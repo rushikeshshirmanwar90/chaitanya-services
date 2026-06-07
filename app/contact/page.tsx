@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import ContactSection from '@/components/ContactSection'
-import { contactInfo } from "@/data/constants";
 
 
 const page = () => {
@@ -12,10 +11,7 @@ const page = () => {
     return (
         <div>
             {/* Contact */}
-            <ContactSection
-                contactInfo={contactInfo}
-                onSubmit={handleContactSubmit}
-            />
+            <ContactSection onSubmit={handleContactSubmit} />
         </div>
     )
 }

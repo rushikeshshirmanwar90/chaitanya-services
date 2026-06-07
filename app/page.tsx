@@ -6,7 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServiceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/FooterSection";
-import { contactInfo } from "@/data/constants";
+import ReviewsSection from "@/components/ReviewSection";
 import TravelPackages from "@/components/packages/travel-packages";
 
 const HomePage: React.FC = () => {
@@ -29,15 +29,15 @@ const HomePage: React.FC = () => {
         {/* Services */}
         <ServicesSection />
 
+        {/* Reviews */}
+        <ReviewsSection />
+
         {/* Contact */}
-        <ContactSection
-          contactInfo={contactInfo}
-          onSubmit={handleContactSubmit}
-        />
+        <ContactSection onSubmit={handleContactSubmit} />
       </div>
 
       {/* Footer */}
-      <Footer contactInfo={contactInfo} />
+      <Footer />
     </div>
   );
 };

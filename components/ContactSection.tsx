@@ -8,19 +8,19 @@ import { ContactInfo } from '../types';
 import React from "react";
 import { sendToWhatsApp } from "../utils/whatsapp";
 import Link from "next/link";
+import { useSiteContent } from "@/hooks/useSiteContent";
+import type { SiteContentData } from "@/data/defaults";
 
 interface ContactFormProps {
     onSubmit?: (e: React.FormEvent) => void;
 }
 
 interface ContactInfoDisplayProps {
-    contactInfo: ContactInfo;
+    contact: SiteContentData["contact"];
 }
 
 interface ContactSectionProps {
-    contactInfo: ContactInfo;
-    title?: string;
-    subtitle?: string;
+    contactInfo?: ContactInfo;
     className?: string;
     onSubmit?: (e: React.FormEvent) => void;
 }
@@ -60,60 +60,60 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => (
     </div>
 );
 
-const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contactInfo }) => (
+const ContactInfoDisplay: React.FC<ContactInfoDisplayProps> = ({ contact }) => (
     <div className="animate-slide-in-left">
         <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
         <div className="space-y-4">
             <div className="flex items-center">
                 <Phone className="w-5 h-5 text-blue-600 mr-3" />
-                <span>{contactInfo.phone}</span>
+                <span>{contact.phone}</span>
             </div>
             <div className="flex items-center">
                 <Mail className="w-5 h-5 text-blue-600 mr-3" />
-                <span>{contactInfo.email}</span>
+                <span>{contact.email}</span>
             </div>
             <div className="flex items-center">
                 <MapIcon className="w-5 h-5 text-blue-600 mr-3" />
-                <span>{contactInfo.address}</span>
+                <span>{contact.address}</span>
             </div>
         </div>
 
         <h5 className="text-lg font-bold mt-6 mb-3">Opening Hours</h5>
         <div className="space-y-4">
-            <div className="flex items-center">
-                Monday-Saturday : 9AM to 8PM
-            </div>
-            <div className="flex items-center">
-                Sunday: 12 noon to 6PM
-            </div>
+            {contact.openingHours.map((line, i) => (
+                <div key={i} className="flex items-center">
+                    {line}
+                </div>
+            ))}
         </div>
 
         <h5 className="text-lg font-bold mt-6 mb-3">Important Links</h5>
         <div className="space-y-4">
-            <Link href="/terms&condition" className="text-blue-600 hover:underline"> Terms & Conditions  </Link>
+            <Link href={contact.termsLink || "/terms&condition"} className="text-blue-600 hover:underline"> Terms & Conditions  </Link>
             <br />
-            <Link href="/privacyPolicy" className="text-blue-600 hover:underline"> Privacy Policy</Link>
+            <Link href={contact.privacyLink || "/privacyPolicy"} className="text-blue-600 hover:underline"> Privacy Policy</Link>
         </div>
 
-        <div className="mt-8">
-            <Button
-                className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-2"
-                onClick={() => window.open('https://www.facebook.com/share/16zPfjSx4J/', '_blank')}
-            >
-                <Facebook className="w-5 h-5" />
-                Follow us on Facebook
-            </Button>
-        </div>
+        {contact.facebookUrl && (
+            <div className="mt-8">
+                <Button
+                    className="bg-[#1877F2] hover:bg-[#166FE5] text-white flex items-center gap-2"
+                    onClick={() => window.open(contact.facebookUrl, '_blank')}
+                >
+                    <Facebook className="w-5 h-5" />
+                    Follow us on Facebook
+                </Button>
+            </div>
+        )}
     </div>
 );
 
 const ContactSection: React.FC<ContactSectionProps> = ({
-    contactInfo,
-    title = "Get In Touch",
-    subtitle = "Ready to start your next adventure?",
     className = "",
     onSubmit
 }) => {
+    const { contact } = useSiteContent();
+    const { title, subtitle } = contact;
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const form = e.target as HTMLFormElement;
@@ -142,7 +142,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                     <p className="text-gray-600 text-lg">{subtitle}</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-12">
-                    <ContactInfoDisplay contactInfo={contactInfo} />
+                    <ContactInfoDisplay contact={contact} />
                     <ContactForm onSubmit={handleSubmit} />
                 </div>
             </div>

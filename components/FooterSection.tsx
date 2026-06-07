@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ContactInfo } from '../types';
 import React from "react";
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 interface FooterLink {
     href: string;
@@ -15,30 +16,17 @@ interface FooterSection {
 }
 
 interface FooterProps {
-    contactInfo: ContactInfo;
-    companyName?: string;
-    description?: string;
+    contactInfo?: ContactInfo;
     className?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({
-    contactInfo,
-    companyName = "Chaitanya Services",
-    description = "Creating unforgettable travel experiences across India since 2015.",
-    className = ""
-}) => {
-    const quickLinks: FooterLink[] = [
-        { href: "/About", label: "About" },
-        { href: "/Packages", label: "Packages" },
-    ];
-
-    const destinations: FooterLink[] = [
-        { href: "", label: "Andaman" }
-    ];
+const Footer: React.FC<FooterProps> = ({ className = "" }) => {
+    const { footer, contact } = useSiteContent();
+    const { companyName, description, copyrightYear } = footer;
 
     const sections: FooterSection[] = [
-        { title: "Quick Links", links: quickLinks },
-        { title: "Popular Destinations", links: destinations }
+        { title: "Quick Links", links: footer.quickLinks },
+        { title: "Popular Destinations", links: footer.destinations }
     ];
 
     return (
@@ -73,16 +61,16 @@ const Footer: React.FC<FooterProps> = ({
                     <div>
                         <h4 className="font-bold mb-4">Contact</h4>
                         <div className="space-y-2 text-gray-400">
-                            <p>{contactInfo.phone}</p>
-                            <p>{contactInfo.email}</p>
-                            <p className="whitespace-pre-line">{contactInfo.address}</p>
+                            <p>{contact.phone}</p>
+                            <p>{contact.email}</p>
+                            <p className="whitespace-pre-line">{contact.address}</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Copyright */}
                 <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2025 {companyName}. All rights reserved.</p>
+                    <p>&copy; {copyrightYear} {companyName}. All rights reserved.</p>
                 </div>
             </div>
         </footer>

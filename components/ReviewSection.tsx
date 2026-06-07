@@ -5,7 +5,7 @@ import { Star } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -25,7 +25,7 @@ interface ReviewCardProps {
 }
 
 interface ReviewsSectionProps {
-    reviews: Review[];
+    reviews?: Review[];
     title?: string;
     subtitle?: string;
     className?: string;
@@ -57,11 +57,26 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => (
 );
 
 const ReviewsSection: React.FC<ReviewsSectionProps> = ({
-    reviews,
+    reviews: reviewsProp,
     title = "What Our Travelers Say",
     subtitle = "Real experiences from real people",
     className = ""
 }) => {
+    const [fetched, setFetched] = useState<Review[]>([]);
+
+    // When no reviews are passed in, load them from the database.
+    useEffect(() => {
+        if (reviewsProp) return;
+        fetch("/api/review")
+            .then((res) => res.json())
+            .then((data) => Array.isArray(data) && setFetched(data))
+            .catch(() => setFetched([]));
+    }, [reviewsProp]);
+
+    const reviews = reviewsProp ?? fetched;
+
+    if (reviews.length === 0) return null;
+
     return (
         <section id="reviews" className={`py-20 ${className}`}>
             <div className="container mx-auto px-4">
